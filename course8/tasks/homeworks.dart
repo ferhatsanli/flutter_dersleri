@@ -20,6 +20,14 @@ void main(List<String> args) {
 
   List<Student> muglaStudents = [for(int i = 0; i<100; i++) Student.randomVals()];
 
-  for (Student s in muglaStudents) s.printVals();
+  // for (Student s in muglaStudents) s.printVals();
+  for (Student s in muglaStudents) print(s);
+
+  double summaryOfScores = 0;
+
+  muglaStudents.forEach((element) {summaryOfScores += element.score;});
+
+  print("Average of all students: ${summaryOfScores~/muglaStudents.length}");
+
 }
 
